@@ -3,6 +3,7 @@ import java.util.Arrays;
 public class HomeWork3 {
     public static void main(String[] args) {
        intArrays();
+        diagonalFill(5);
         System.out.println(Arrays.toString(variableArray(10, 4)));
     }
     public static void intArrays() {
@@ -26,6 +27,20 @@ public class HomeWork3 {
         }
         System.out.println(Arrays.toString(myArray3));
     }
+
+    public static void diagonalFill(int x) {
+        int[][] myDoubleArray = new int[x][x];
+        int y = 0;
+        for (x--; x >= 0; x--) {
+            myDoubleArray[x][x] = 1;
+            myDoubleArray[x][y] = 1;
+            y++;
+        }
+        for (int i = 0; i < myDoubleArray.length; i++) {
+            System.out.println(Arrays.toString(myDoubleArray[i]));
+        }
+    }
+
     public static int[] variableArray(int len, int initialValue) {
         int[] varArray = new int[len];
         for (int i = 0; i < len; i++) {
